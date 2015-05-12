@@ -15,8 +15,9 @@ html {
   -webkit-text-size-adjust: 100%;   
 }
 body {
-  margin: 0;
-   
+  /*testing for background*/
+  background-size: cover; 
+  /*margin: 0;*/  
 }
 article,
 aside,
