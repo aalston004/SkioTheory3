@@ -149,7 +149,6 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 
-<?php 
 // Custom CSS for the login page
 // Create wp-login.css in your theme folder
 function wpfme_loginCSS() {
@@ -187,5 +186,3 @@ add_filter( 'login_errors', 'wpfme_login_obscure' );
 
 // Disable the theme / plugin text editor in Admin
 define('DISALLOW_FILE_EDIT', true);
-
-?>
