@@ -111,6 +111,8 @@ function maad_villain_scripts() {
 
     wp_enqueue_style('maad-villain-gfonts', 'http://fonts.googleapis.com/css?family=Marck+Script|Tangerine|Kalam');
 
+    wp_enqueue_style('madd-villain-fontawesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
 	wp_enqueue_script( 'maad-villain-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'maad-villain-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
