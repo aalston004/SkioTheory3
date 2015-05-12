@@ -147,3 +147,45 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+<?php 
+// Custom CSS for the login page
+// Create wp-login.css in your theme folder
+function wpfme_loginCSS() {
+	echo '<link rel="stylesheet" type="text/css" href="'.get_bloginfo('template_directory').'/wp-login.css"/>';
+}
+add_action('login_head', 'wpfme_loginCSS');
+
+// Call the google CDN version of jQuery for the frontend
+// Make sure you use this with wp_enqueue_script('jquery'); in your header
+function wpfme_jquery_enqueue() {
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", false, null);
+	wp_enqueue_script('jquery');
+}
+if (!is_admin()) add_action("wp_enqueue_scripts", "wpfme_jquery_enqueue", 11);
+
+// Call Googles HTML5 Shim, but only for users on old versions of IE
+function wpfme_IEhtml5_shim () {
+	global $is_IE;
+	if ($is_IE)
+	echo '<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->';
+}
+add_action('wp_head', 'wpfme_IEhtml5_shim');
+
+
+// Remove the version number of WP
+// Warning - this info is also available in the readme.html file in your root directory - delete this file!
+remove_action('wp_head', 'wp_generator');
+
+
+// Obscure login screen error messages
+function wpfme_login_obscure(){ return '<strong>Sorry</strong>: Think you have gone wrong somwhere!';}
+add_filter( 'login_errors', 'wpfme_login_obscure' );
+
+
+// Disable the theme / plugin text editor in Admin
+define('DISALLOW_FILE_EDIT', true);
+
+?>
