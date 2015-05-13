@@ -92,7 +92,7 @@ add_action( 'after_setup_theme', 'maad_villain_setup' );
  */
 
  //register custon nav walker
- require_once('wp_bootstrap_navwalker.php');
+ <?php require_once('wp_bootstrap_navwalker.php'); ?>
 
 function maad_villain_widgets_init() {
 	register_sidebar( array(
