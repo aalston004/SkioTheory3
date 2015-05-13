@@ -20,12 +20,13 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
+
+    <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to Content','maad-villain'); ?></a>
+
     <header>
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-			    <h1 class="menu-toggle"><?php _e( 'Primary Menu', 'maad-villain' ); ?></h1>
-                <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to Content','maad-villain'); ?></a>
-
-			    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			        
+			    <?php wp_nav_menu( array( 'theme_location' => 'Primary' ) ); ?>
 		    </nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
