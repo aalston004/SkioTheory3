@@ -90,6 +90,10 @@ add_action( 'after_setup_theme', 'maad_villain_setup' );
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
+
+ //register custon nav walker
+ require_once('wp_bootstrap_navwalker.php');
+
 function maad_villain_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'maad-villain' ),
