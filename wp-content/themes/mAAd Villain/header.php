@@ -19,11 +19,10 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div>
-
+<div id="page" class="hfeed site">
      <header>
 			<nav class="navbar navbar-default" role="navigation">
-                  <div class="container-fluid">
+                <div class="navbar-header"> <!---b-->
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -36,19 +35,22 @@
                       <a class="navbar-brand" href="<?php echo home_url(); ?>">
                                 <?php bloginfo('name'); ?>
                             </a>
-                    </div>
-
-                       <?php /* Primary navigation */
+                    </div><!--b-->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse"><!--c-->
+                      <?php
                             wp_nav_menu( array(
-                              'menu' => 'top_menu',
-                              'depth' => 2,
-                              'container' => false,
-                              'menu_class' => 'nav',
-                              //Process nav menu using our custom nav walker
-                              'walker' => new wp_bootstrap_navwalker())
+                                'menu'              => 'primary',
+                                'theme_location'    => 'primary',
+                                'depth'             => 2,
+                                'container'         => 'div',
+                                'container_class'   => 'collapse navbar-collapse',
+                                'container_id'      => 'bs-example-navbar-collapse-1',
+                                'menu_class'        => 'nav navbar-nav',
+                                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                                'walker'            => new wp_bootstrap_navwalker())
                             );
-                            ?>
-                    </div>
+                        ?>
+                    </div><!--c-->
                 </nav>
 	</header><!-- #masthead -->
 
