@@ -32,9 +32,7 @@
                         <span class="icon-bar"></span>
                       </button>
 
-                      <a class="navbar-brand" href="<?php echo home_url(); ?>">
-                                <?php bloginfo('name'); ?>
-                            </a>
+                      
                     </div><!--b-->
                     <div class="collapse navbar-collapse navbar-ex1-collapse"><!--c-->
                       <?php
