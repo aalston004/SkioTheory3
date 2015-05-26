@@ -21,7 +21,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
      <header>
-			<nav class="navbar navbar-default" role="navigation">
+			<nav class="navbar navbar-right" role="navigation">
                 <div class="navbar-header"> <!---b-->
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
@@ -31,8 +31,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-
-                      
+                                              
                     </div><!--b-->
                     <div class="collapse navbar-collapse navbar-ex1-collapse"><!--c-->
                       <?php
