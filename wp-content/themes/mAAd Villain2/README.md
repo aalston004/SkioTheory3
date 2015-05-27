@@ -1,1 +1,0 @@
-Making of first theme
