@@ -22,7 +22,7 @@
 <div id="page" class="hfeed site">
      <header>
 			<nav class="navbar navbar-right" role="navigation">
-                <div class="navbar-header"> <!---b-->
+                <div class="container-fluid"> <!---b-->
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
