@@ -21,7 +21,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
      <header>
-			<nav class="navbar navbar-right" role="navigation">
+			<nav class="navbar col-md-9 navbar-right" role="navigation">
                 <div class="container-fluid"> <!---b-->
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header"><!--c-->
@@ -49,6 +49,6 @@
 
                     </div><!--b-->
                 </nav>
-	</header><!-- #masthead -->
+	</header>
 
 	<div id="content" class="site-content">
