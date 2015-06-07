@@ -42,14 +42,6 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'DfL|:jCmI)N^1ZTO&<HIZ?l_.;5<IB.KuV');
-define('SECURE_AUTH_KEY',  'DfL|:jCmI)N^ZTO&2<HIZ?l_.;5<IB.KuV');
-define('LOGGED_IN_KEY',    'DfL|:jCmI)N^ZTO&3<HIZ?l_.;5<IB.KuV');
-define('NONCE_KEY',        'DfL|:jCmI)N^ZTO4&<HIZ?l_.;5<IB.KuV');
-define('AUTH_SALT',        'DfL|:jCmI)N^ZTO5&<HIZ?l_.;5<IB.KuV');
-define('SECURE_AUTH_SALT', 'DfL|:jCmI)N^ZTO6&<HIZ?l_.;5<IB.KuV');
-define('LOGGED_IN_SALT',   'DfL|:jCmI)N^ZTO0&<HIZ?l_.;5<IB.KuV');
-define('NONCE_SALT',       'DfL|:jCmI)N^ZTO&<H8IZ?l_.;5<IB.KuV');
 
 /**#@-*/
 
