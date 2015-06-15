@@ -1,2 +1,8 @@
-body {
-}
+/*
+Theme Name: Evil Genius
+Theme URI: http://skiotheory.com
+Description: EG
+Version: 1.0.0
+*/
+
+@import url('/css/bootstrap.min.css');
