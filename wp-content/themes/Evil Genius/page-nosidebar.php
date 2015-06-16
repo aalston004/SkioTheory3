@@ -13,5 +13,4 @@ $ap_core_content = ap_core_get_which_content(); ?>
 	<?php tha_content_bottom(); ?>
 </div>
 <?php tha_content_after();?>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

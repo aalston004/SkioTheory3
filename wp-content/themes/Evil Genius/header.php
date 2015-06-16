@@ -5,7 +5,7 @@
 <?php tha_head_top(); ?>
 <meta charset="<?php bloginfo('charset'); ?>">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<?php $options = get_option( 'ap_core_theme_options' ); ?>
+
 <?php
 	$ap_core_headerimg = null;
 	if ( $options['site-title'] == false ) {

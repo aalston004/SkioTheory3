@@ -9,6 +9,16 @@ if ( ! isset( $content_width ) )
 
 // Register Theme Features
 function add_theme_support()  {
+
+    // load up the theme options
+    require_once ( get_template_directory() . '/inc/theme-options.php' );
+    
+    // include theme hook alliance hooks
+    require_once( get_template_directory() . '/inc/hooks.php' );
+    
+    // include bootstrap nav walker class
+    require_once( get_template_directory() . '/inc/wp_bootstrap_navwalker.php' );
+    
 	// Add theme support for Automatic Feed Links
 	add_theme_support( 'automatic-feed-links' );
 
@@ -130,11 +140,9 @@ add_action('wp_head', 'wpfme_IEhtml5_shim');
 // Warning - this info is also available in the readme.html file in your root directory - delete this file!
 remove_action('wp_head', 'wp_generator');
 
-
 // Obscure login screen error messages
 function wpfme_login_obscure(){ return '<strong>Sorry</strong>: Think you have gone wrong somwhere!';}
 add_filter( 'login_errors', 'wpfme_login_obscure' );
-
 
 // Disable the theme / plugin text editor in Admin
 define('DISALLOW_FILE_EDIT', true);
