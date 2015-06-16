@@ -5,6 +5,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 698;
 
+//---------------------------------------------------------------------------------------------------------------------------------
 
 // Register Theme Features
 function add_theme_support()  {
@@ -58,6 +59,7 @@ function add_theme_support()  {
 // Hook into the 'after_setup_theme' action
 add_action( 'after_setup_theme', 'add_theme_support' );
 
+//-----------------------------------------------------------------------------------------------------------------------
 
 // Register Navigation Menus
 function nav_menus() {
@@ -87,16 +89,17 @@ function main_sidebar() {
 // Hook into the 'widgets_init' action
 add_action( 'widgets_init', 'main_sidebar' );
 
+//---------------------------------------------------------------------------------------------------------------------------------
 
 // Register Script
 function load_scripts1() {
-    wp_register_script( 'jquery', '', false, false, false );
+    wp_register_script( 'jquery', 'http://code.jquery.com/jquery-2.1.4.min.js', false, '2.1.4', false );
 	wp_enqueue_script( 'jquery' );
 
 	wp_register_script( 'bs', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), false, false );
 	wp_enqueue_script( 'bs' );
 
-	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr-2.5.3.min.js', false, '2.5.3', false );
+	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.min.js', false, '2.8.3', false );
 	wp_enqueue_script( 'modernizr' );
     }
 // Hook into the 'wp_enqueue_scripts' action
@@ -107,10 +110,33 @@ add_action( 'wp_enqueue_scripts', 'load_scripts1' );
 function load_styles1() {
 	wp_register_style( 'bs', get_template_directory_uri() . '/css/bootstrap.min.css', false, false );
 	wp_enqueue_style( 'bs' );
+
+    wp_enqueue_style('fontawesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 }
 // Hook into the 'wp_enqueue_scripts' action
 add_action( 'wp_enqueue_scripts', 'load_styles1' );
 
+//----------------------------------------------------------------------------------------------------------------------------
 
+// Call Googles HTML5 Shim, but only for users on old versions of IE
+function wpfme_IEhtml5_shim () {
+	global $is_IE;
+	if ($is_IE)
+	echo '<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->';
+}
+add_action('wp_head', 'wpfme_IEhtml5_shim');
+
+// Remove the version number of WP
+// Warning - this info is also available in the readme.html file in your root directory - delete this file!
+remove_action('wp_head', 'wp_generator');
+
+
+// Obscure login screen error messages
+function wpfme_login_obscure(){ return '<strong>Sorry</strong>: Think you have gone wrong somwhere!';}
+add_filter( 'login_errors', 'wpfme_login_obscure' );
+
+
+// Disable the theme / plugin text editor in Admin
+define('DISALLOW_FILE_EDIT', true);
 
 ?>
