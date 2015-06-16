@@ -1,14 +1,27 @@
 <?php
+/*
+	This is the main index template
+*/
+if ( is_front_page() || is_home() ) {
+	get_header( 'home' );
+} else {
+	get_header();
+}
+tha_content_before();
+$ap_core_content = ap_core_get_which_content(); ?>
+<div class="content col-md-9 <?php echo $ap_core_content; ?>">
+	<?php tha_content_top(); ?>
 
-?>
+	<?php if (have_posts()) : while (have_posts()) : the_post();
+		$ap_core_post_format = get_post_format();
+		get_template_part('parts/post', $ap_core_post_format);
+		endwhile; ?>
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title></title>
-    </head>
-    <body>
-        
-    </body>
-</html>
+		<?php get_template_part( 'parts/part', 'navigation' ); ?>
+
+	<?php endif; ?>
+
+	<?php tha_content_bottom(); ?>
+</div>
+<?php tha_content_after(); ?>
+<?php get_footer(); ?>

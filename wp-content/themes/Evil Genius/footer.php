@@ -1,14 +1,17 @@
 <?php
+	$ap_options = get_option( 'ap_core_theme_options' );
+	$ap_defaults = ap_core_get_theme_defaults();
+	?>
 
-?>
+	</div>
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title></title>
-    </head>
-    <body>
-        
-    </body>
+	<?php tha_footer_before(); ?>
+	
+	<?php tha_footer_after(); ?>
+
+</div><!-- closes .container -->
+
+<?php tha_body_bottom(); ?>
+<?php wp_footer(); ?>
+</body>
 </html>
